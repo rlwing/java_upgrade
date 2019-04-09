@@ -29,8 +29,13 @@ public class StringExercises {
     @Test
     public void stringLengthSort_lambda() {
         // Use lambda for the Comparator (reverse sort)
+        Collections.sort(strings, (s1, s2) -> s2.length() - s1.length());
+        System.out.println(strings);
 
         // Use the "sorted" method on Stream
+        strings.stream()
+                .sorted((s1, s2) -> s2.length() - s1.length())
+                .forEach(System.out::println);
     }
 
     private static int compareStrings(String s1, String s2) {
@@ -39,10 +44,16 @@ public class StringExercises {
 
     @Test  // Use a lambda that calls 'compareStrings' directly
     public void stringLengthSort_methodCall() {
+        strings.stream()
+                .sorted((s1, s2) -> compareStrings(s1, s2))
+                .forEach(System.out::println);
     }
 
     @Test  // Use a method ref to 'compareStrings'
     public void stringLengthSort_methodRef() {
+        strings.stream()
+                .sorted(Comparator.comparingInt(String::length).thenComparing(Comparator.naturalOrder()))
+                .forEach(System.out::println);
     }
 
     @Test  // Use Comparator.comparingInt

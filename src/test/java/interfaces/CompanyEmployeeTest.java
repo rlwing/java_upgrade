@@ -2,6 +2,9 @@ package interfaces;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+
 // Create a class called CompanyEmployee that implements both
 //   the Company and Employee interfaces
 // Implement the necessary methods
@@ -11,7 +14,8 @@ public class CompanyEmployeeTest {
 
     @Test
     public void getName() {
-//        CompanyEmployee emp = new CompanyEmployee("Peter", "Gibbons");
-//        assertEquals("Peter Gibbons works for Initech", emp.getName());
+        CompanyEmployee emp = new CompanyEmployee("Peter", "Gibbons");
+        assertEquals("Peter Gibbons works for Initech", emp.getName());
     }
+
 }
