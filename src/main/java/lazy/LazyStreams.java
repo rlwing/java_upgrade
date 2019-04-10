@@ -25,10 +25,11 @@ public class LazyStreams {
                 .findFirst().orElse(0);
         System.out.println(firstEvenDoubleDivBy3);
 
-
+        //This is cool
         // Demonstrate laziness using print statements
         firstEvenDoubleDivBy3 = IntStream.range(100, 2_000_000)
                 .map(LazyStreams::multByTwo)
+//                .parallel() This causes the stream to process a group for each processor.  Many more than without it.
                 .filter(LazyStreams::modByThree)
                 .findFirst().orElse(0);
         System.out.printf("First even divisible by 3 is %d%n", firstEvenDoubleDivBy3);
