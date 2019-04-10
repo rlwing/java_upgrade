@@ -7,6 +7,7 @@ import java.util.stream.IntStream;
 
 import static org.junit.Assert.*;
 
+//This is cool too!
 public class ProductDAOTest {
     private ProductDAO dao = new ProductDAO();
 

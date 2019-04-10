@@ -6,6 +6,7 @@ import java.util.Optional;
 import static java.util.Map.entry;
 import static java.util.Map.ofEntries;
 
+//Also very cool!
 public class ProductDAO {
     private static Map<Integer, Product> products =
             ofEntries(entry(1, new Product(1, "Football", 12.99)),
